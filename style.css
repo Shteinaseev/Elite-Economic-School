@@ -14,31 +14,33 @@ a{
 }
 
 body {
-    height: 200vh;
+    min-height: 200vh;
     background-image:radial-gradient(circle farthest-corner, #060A33, #000000);
     color: #ffffff;
     overflow-x: hidden;
 }
 
-
-
 section{
-    position: relative;
-    z-index: 2;
     padding-inline: 60px;
 }
 
+main{
+    width: 100%;
+    height: 100%;
+}
+
 .header {
-    position: sticky;
+    position: fixed;
     width: 100%;
     top: 0;
     left: 0;
-    padding: 20px 100px;
+    padding-block: 1.25rem;
+    padding-inline: 6.25rem;
     display: flex;
     background-color: transparent;
     justify-content: space-between;
     align-items: center;
-    z-index: 99;
+    z-index: 100;
 }
 
 .header::before {
@@ -66,7 +68,7 @@ section{
 }
 
 .logo {
-    font-size: 25px;
+    font-size: clamp(1.4rem, 1.701vw, 1.56rem);
     font-weight: 600;
     cursor: default;
 }
@@ -85,17 +87,6 @@ section{
   filter: url(#glass-distortion) saturate(120%) brightness(1.15);
 }
 
-.glass-distortion-overlay {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.05) 0%, transparent 80%),
-              radial-gradient(circle at 80% 70%, rgba(255,255,255,0.05) 0%, transparent 80%);
-  background-size: 300% 300%;
-  animation: floatDistort 10s infinite ease-in-out;
-  mix-blend-mode: overlay;
-  z-index: 2;
-  pointer-events: none;
-}
 
 @keyframes floatDistort {
   0% { background-position: 0% 0%; }
@@ -106,13 +97,25 @@ section{
 
 .glass-overlay {
   z-index: 2;
-  background: var(--bg-color);
 }
 
 .glass-specular {
-    border-radius: 25px;
     z-index: 3;
     box-shadow: inset 2px 2px 2px #ffffff55;
+}
+
+#specular {
+    box-shadow: none;
+}
+
+.core {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 110vh;
+    position: relative;
+    column-gap: 40px;
 }
 
 .title {
@@ -123,52 +126,53 @@ section{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     height: 100%;
     row-gap: 30px;
-    max-width: 40%;
+    max-width: 60%;
+
 }
 
 .title p {
-    font-size: 18px;
+    font-size: 1.15rem;
 }
 
 .description{
     position: relative;
     z-index: 4;
     padding: 30px;
-    font-size: 25px;
-    max-width: 20%;
+    font-size: clamp(1.2rem, 1.701vw, 1.56rem);
     background-color: #ffffff10;
     backdrop-filter: blur(10px);
     border-radius: 25px;
     margin-right: 7vw;
+    max-width: 200px;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
 }
 
 .navbar a {
-    margin-left: 35px;
     transition: .3s;
+    font-size: 1rem;
+    padding: 7px;
 }
 
 .navbar a:hover{
-    color: #ff0000;
+    color: #0d6efd;
+    background: #060A33;
+    box-shadow: 0 0 5px #060A33,
+                0 0 25px #060A33,
+                0 0 50px #060A33,
+                0 0 200px #060A33;    
 }
 
-main{
-    width: 100%;
-    height: 100vh;
-}
-
-.core {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-}
 
 h1 {
-    font-size: min(5vw, 75px);
+    font-size: min(6vw, 75px);
     line-height: 1;
     letter-spacing: 1.5px;
 }
@@ -177,6 +181,7 @@ h1 {
 .text-block p {
     line-height: 1.35;
     font-size: min(2.2vw, 21px);
+    font-weight: 100;
 }
 
 .container{
@@ -188,7 +193,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    z-index: -1;
 }
 
 .scene {
@@ -243,18 +248,16 @@ h1 {
 }
 
 .about h2 {
-    font-size: 2.5rem;
+    font-size: clamp(2.1rem, 2.721vw, 2.5rem);
     grid-column: 1 / -1;
     grid-row: 1;
     text-align: center;
 }
 
-
-
 .article{
     border-radius: 25px;
     position: relative;
-    padding: 20px;
+    padding: 1.25rem;
 }
 
 .content{
@@ -271,7 +274,7 @@ h1 {
 
 .article h3{
     text-align: left;
-    font-size: 1.7rem;
+    font-size: clamp(1.5rem, 1.837vw, 1.7rem);
 }
 
 .article p{
@@ -369,13 +372,17 @@ img {
 .cards{
     padding-block: 50px;
     display: flex;
-    gap: 50px;
-    justify-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    row-gap: 20px;
 }
 
 .cards > article {
     position: relative;
     padding: 25px;
+    border-radius: 25px;
+    flex-basis: 250px;
+
 }
 
 .cards > article > .content{
@@ -427,12 +434,22 @@ img {
     }
 }
 
-@media(max-width: 992px){
-    .core{
-        margin-block: 50px;
+@media(max-width: 1050px){
+    .about{
+        padding-block: 150px;
+        padding-inline: 40px;
     }
-    .header {
-        padding: 1.25rem 4%;
+}
+
+@media(max-width: 950px){
+    .header{
+        padding-inline: 4.5vh;
+    }
+}
+
+@media (max-width: 870px){
+    .description{
+        margin-right: 0;
     }
 }
 
@@ -441,16 +458,69 @@ img {
         display: block;
     }
     .navbar {
-        position: fixed;
+        position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
-        padding: .5rem 4%;
-        border-bottom: 2px solid #ffffff22;
+        padding-inline: 4%;
+        display: none;
+    }
+
+    .navbar.active {
+        display: block;
     }
 
     .navbar a {
         display: block;
         margin: 1.5rem 0;
     }
+    .nav-bg {
+        position: fixed;
+        top: 8vh;
+        left: 0;
+        width: 100%;
+        min-height: 270px;
+        background-image: linear-gradient(60deg, #00000022, #00000033);
+        backdrop-filter: blur(30px);
+        border-bottom: 2px solid #ffffff22;
+        z-index: 99;
+        display: none;
+    }
+
+    .nav-bg.active{
+        display: block;
+    }
+
+}
+
+@media (max-width: 750px) {
+    section{
+        padding-inline: 15px;
+    }
+
+    .core{
+        justify-content: space-between;
+        height: 100vh;
+    }
+    
+}
+
+@media (max-width: 600px) {
+    .core{
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        row-gap: 20px;
+        height: 90vh;
+    }
+
+    .description{
+        max-width: 60%;
+    }
+
+    .title{
+        height: auto;
+        max-width: 100%;
+    }
+
 }

@@ -19,9 +19,13 @@ window.addEventListener("scroll", function(){
 })
 
 const menuIcon = document.querySelector('#menu-icon')
+const navbar = document.querySelector('.navbar')
+const navbg = document.querySelector('.nav-bg')
 
 menuIcon.addEventListener('click', () => {
-    menuIcon.classList.toggle('bx-i')
+    menuIcon.classList.toggle('bx-x')
+    navbar.classList.toggle('active')
+    navbg.classList.toggle('active')
 } )
 
 document.addEventListener('DOMContentLoaded', function() {
