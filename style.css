@@ -129,7 +129,7 @@ main{
     align-items: flex-start;
     height: 100%;
     row-gap: 30px;
-    max-width: 60%;
+    max-width: 45%;
 
 }
 
@@ -280,7 +280,7 @@ h1 {
 .article p{
     font-weight: 200;
     text-align: left;
-    font-size: 1.5rem;
+    font-size: clamp(1.1rem, 1.633vw, 1.5rem);
 }
 
 .article img {
@@ -502,6 +502,12 @@ img {
         justify-content: space-between;
         height: 100vh;
     }
+
+    .about{
+        padding-block: 100px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto repeat(3, 1fr);
+    }
     
 }
 
@@ -521,6 +527,14 @@ img {
     .title{
         height: auto;
         max-width: 100%;
+    }
+
+    @media (max-width: 550px){
+        .about{
+            grid-template-columns: 1fr;
+            grid-template-rows: auto repeat(4, 1fr);
+            padding-inline: 12.5vw;
+        }
     }
 
 }
