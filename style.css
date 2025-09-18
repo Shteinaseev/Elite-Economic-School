@@ -14,7 +14,6 @@ a {
 }
 
 body {
-    min-height: 450vh;
     background-image: radial-gradient(circle farthest-corner, #060A33, #000000);
     color: #ffffff;
     overflow-x: hidden;
@@ -138,7 +137,6 @@ main {
     height: 100%;
     row-gap: 30px;
     max-width: 45%;
-
 }
 
 .title p {
@@ -181,7 +179,7 @@ main {
 
 
 h1 {
-    font-size: clamp(3rem, 6vw, 4, 68rem);
+    font-size: clamp(3.5rem, 6vw, 4, 68rem);
     line-height: 1;
     letter-spacing: 1.5px;
 }
@@ -371,40 +369,45 @@ img {
 }
 
 .block h2 {
-    font-size: 2.5rem;
+    font-size:clamp(1.8rem, 2.759vw, 2.5rem);
     line-height: 1.2;
 }
 
 .block p {
-    font-size: 1.5rem;
+    font-size: clamp(1.3rem, 1.655vw, 1.5rem);
     text-align: center;
 }
 
 .cards {
-    padding-block: 50px;
+    padding-block: 3.125rem;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
-    row-gap: 20px;
+    row-gap: 1.25rem;
+    column-gap: 1vw;
 }
 
 .cards>article {
     position: relative;
     padding: 25px;
     border-radius: 25px;
-    flex-basis: 250px;
-
+    flex-basis: 50%;
+    max-width: 250px;
 }
 
-.cards>article>.content {
+.content {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
 }
 
-.cards>article p {
-    font-size: 2.6rem;
+.content h3{
+    font-size: clamp(1.3rem, 1.655vw, 1.5rem);
+}
+
+.content p {
+    font-size: clamp(2.2rem, 2.897vw, 2.6rem);
 }
 
 
