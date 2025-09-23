@@ -8,6 +8,10 @@
     column-gap: 40px;
 }
 
+section {
+    padding-inline: 60px;
+}
+
 .title {
     position: relative;
     z-index: 4;
