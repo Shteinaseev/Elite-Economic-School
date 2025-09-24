@@ -13,6 +13,12 @@
 </head>
 
 <body>
+    <svg style="display: none">
+        <filter id="glass-distortion">
+            <feTurbulence type="turbulence" baseFrequency="0.008" numOctaves="2" result="noise" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="77" />
+        </filter>
+    </svg>
     <header class="header">
         <a href="/index.html" class="logo">Elite Economic school</a>
         <i class="bx bx-menu" id="menu-icon"></i>
@@ -105,10 +111,71 @@
             </div>
         </section>
         <section class="form">
-            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, reprehenderit.</h2>
-            <script src="points.js" defer></script>
+            <form id="regForm" class="glass-card" action="/regestration" method="post" novalidate data-js-form>
+                <div class="glass-filter"></div>
+                <div class="glass-overlay"></div>
+                <div class="glass-specular"></div>
+                <div class="content">
+                    <div class="form-group">
+                        <label for="ur">Ime</label>
+                        <div class="block">
+                            <input id="ur" type="text" required>
+                            <i class="bxr bx-user"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="ps">Prezime</label>
+                        <div class="block">
+                            <input id="ps" type="text" required>
+                            <i class="bxr bx-user"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="em">Prezime</label>
+                        <div class="block">
+                            <input id="em" type="email" required>
+                            <i class="bxr bx-envelope-open"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="desc">Poruka</label>
+                        <textarea name="desc" id="desc" required></textarea>
+                    </div>
+                    <button class="subBtn" type="submit">Posalji</button>
+                </div>
+            </form>
         </section>
+        <footer id="footer" class="footer glass-card">
+            <div class="glass-form"></div>
+            <div class="glass-filter"></div>
+            <div class="glass-specular"></div>
+            <div class="glass-content">
+                <div class="footer-section">
+                    <h3>Contacts</h3>
+                    <p>Tel: +381 21 6302-992</p>
+                    <p>Mob: +381 63 535-759</p>
+                    <p>Mail: <a href="mailto:skola@elitna.edu.rs" target="_blank" title="e-mail">skola@elitna.edu.rs</a>
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h3>Links</h3>
+                    <a href="#">Upis nove generacije</a>
+                    <a href="#">Obrazovni profili</a>
+                    <a href="#">Redovno obrazovanje</a>
+                    <a href="#">Vanredno obrazovanje</a>
+                    <a href="#">Dokumentacija za upis</a>
+                    <a href="#">Cene školovanja</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Škola</h3>
+                    <a href="#">O školi</a>
+                    <a href="#">Reč direktora</a>
+                    <a href="#">Saradnja sa roditeljima</a>
+                </div>
+            </div>
+        </footer>
     </main>
+    <script src="points.js" defer></script>
 </body>
 
 </html>
