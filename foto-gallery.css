@@ -4,51 +4,144 @@ main{
     height: 100vh;
 }
 
-.images-cards{
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    column-gap: 20px;
+.images-cards {
+  display: grid;
+  place-items: center;
 }
 
+.cards{
+  padding: 2.7rem;
+  position: relative;
+  display: grid;
+  row-gap: 3.5rem;
+  border-radius: 1.5rem;
 
-.parallax-card-content {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #3a1c71, #d76d77, #ffaf7b);
-  background-size: 200% 200%;
-  border-radius: 16px;
-  color: white;
-  backface-visibility: hidden;
-  transform-style: preserve-3d;
-  animation: gradient-animation 7s ease infinite;
-  transition: transform 0.5s ease;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-  padding: 20px;
+}
+
+.image-card {
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.4), 0 4px 20px rgba(187, 155, 255, 0.8);
+  border-radius: 1.5rem;
+  z-index: 4;
   position: relative;
 }
 
-.card-image{
-  width: 100%;
+.image-card img {
+  width: 328px;
   height: 100%;
-  background-image: url(images/elitna-skola-novi-sad-1.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-clip: padding-box;
-  background-position: center;
-  border-radius: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: translateZ(20px);
-  transform-style: preserve-3d;
+  border-radius: 1.5rem;
+  object-fit: cover;
+  
+}
 
+#object-pos{
+  object-position: left top;
+}
+
+.card-data {
+  width: 280px;
+  background-color: #ffffff15;
+  backdrop-filter: blur(10px);
+  padding: 1.5rem 2rem;
+  box-shadow: 0 8px 24px hsla(0, 0%, 0%, .15);
+  border-radius: 1rem;
+  position: absolute;
+  bottom: -8rem;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  opacity: 0;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.4), 0 4px 20px rgba(187, 155, 255, 0.8);
 
 }
+
+.card-link{
+    font-size: clamp(1.1rem, 1.448vw, 1.3rem);
+    font-weight: 500;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+}
+
+.image-card:hover .card-data {
+  animation: show-data 1s forwards;
+  opacity: 1;
+  transition: opacity .3s;
+}
+
+.image-card:hover {
+  animation: remove-overflow 2s forwards;
+}
+
+.image-card:not(:hover) {
+  animation: show-overflow 2s forwards;
+}
+
+.image-cardnk:not(:hover) .card-data {
+  animation: remove-data 1s forwards;
+}
+
+/* Card animation */
+@keyframes show-data {
+  50% {
+    transform: translateY(-10rem);
+  }
+  100% {
+    transform: translateY(-7rem);
+  }
+}
+
+@keyframes remove-overflow {
+  to {
+    overflow: initial;
+  }
+}
+
+@keyframes remove-data {
+  0% {
+    transform: translateY(-7rem);
+  }
+  50% {
+    transform: translateY(-10rem);
+  }
+  100% {
+    transform: translateY(.5rem);
+  }
+}
+
+@keyframes show-overflow {
+  0% {
+    overflow: initial;
+    pointer-events: none;
+  }
+  50% {
+    overflow: hidden;
+  }
+}
+
 
 
 .footer{
     margin-inline: -60px;
 }
 
+@media screen and (min-width: 1120px) {
+  .images-cards {
+    height: 100vh;
+  }
+
+  .cards {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 3.5rem;
+  }
+
+  .image-card card {
+    width: 348px;
+  }
+  .card-data {
+    width: 316px;
+    padding-inline: 2.5rem;
+  }
+}
