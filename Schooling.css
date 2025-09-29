@@ -1,15 +1,27 @@
+
 main {
     padding-inline: 60px;
 }
 
 .svoj-put {
-    margin-top: 210px;
+    margin-top: 110px;
+    position:relative;
+    padding: 50px;
+    border-radius: 25px;
+    margin-inline: 40px;
 }
+
+.svoj-put h1{
+    position: relative;
+    z-index: 4;
+}   
+
 
 .float-card-cont {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    column-gap: 25px;
     padding: 20px;
 }
 
@@ -30,6 +42,8 @@ main {
     box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1), 0 4px 20px rgba(187, 155, 255, 0.2);
     transition: 0.25s ease-in;
     flex-basis: 25%;
+    max-width: 400px;
+    z-index: 4;
 }
 
 .float-card img {
@@ -41,6 +55,46 @@ main {
     transform: translateY(-20px) scale(1.02);
     transition: 0.4s ease-out;
     box-shadow: 0 8px 30px rgba(187, 155, 255, 0.3), 0 4px 12px rgba(233, 223, 255, 0.4);
+}
+
+.stepen-btn {
+    padding: 10px;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 0;
+    overflow: hidden;
+    position: relative;
+    outline: none;
+    border: 1px solid #fff;
+    background-color: transparent;
+    transition: 0.3s;
+    text-align: center;
+    font-size: 1.rem;
+    text-transform:capitalize;
+    width: 150px;
+    border-radius: 16px;
+}
+
+.stepen-btn::before {
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(120deg, transparent, #fff, transparent);
+    transform: translateX(-100%);
+    transition: 0.6s;
+    position: absolute;
+}
+
+.stepen-btn:hover {
+    background-color: transparent;
+    border: 1px solid #101A88;
+    box-shadow: 0 0 20px 5px #101A88;
+}
+
+.stepen-btn:hover::before {
+  transform: translateX(100%);
 }
 
 
@@ -61,14 +115,19 @@ main {
 }
 
 
+.profiles{
+    border-bottom: 2px solid #ffffff;
+    position: relative;
+}
+
 activities-widget {
-    margin-top: 160px;
+    margin-block: 160px;
     display: grid;
-    inline-size: min(100%, 925px);
+    inline-size: min(100%, 58vw);
     margin-inline: auto;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1lh auto auto;
-    gap: 0.5rem 3.5vw;
+    gap: 0.5rem 5vw;
     container-type: inline-size;
 }
 
@@ -127,6 +186,7 @@ activities-widget>.activity {
     transform: translateY(20px);
     transition: 0.5s cubic-bezier(0.85, 0, 0.15, 1);
     pointer-events: none;
+    order: -1;
 }
 
 .activity .text h3 {
@@ -134,8 +194,17 @@ activities-widget>.activity {
     font-size: clamp(1.5rem, 1.837vw, 1.7rem);
 }
 
-.activity .text p {
+.activity .text p.type {
+    margin-top: 5px;
     font-size: clamp(1.1rem, 1.633vw, 1.5rem);
+    font-weight: 300;
+}
+
+.activity .text p{
+    margin-top: 20px;
+    font-size: 1.2rem;
+    line-height: 1.3;
+    text-align: justify;
 }
 
 .activity.active .text {
@@ -161,11 +230,11 @@ activities-widget.children-animating .img {
 }
 
 .activities-navigation button {
-    border: 1px solid #fff;
+    border: 2px solid #fff;
     background: none;
     border-radius: 180%;
     aspect-ratio: 1;
-    font-size: 2rem;
+    height: 40px;
 }
 
 .activities-navigation button:hover {
@@ -177,7 +246,8 @@ activities-widget.children-animating .img {
     grid-column: 2 / -1;
     place-self: start;
     z-index: 99;
-    font-size: 0.9rem;
+    font-size: clamp(0.75rem, 1.103vw, 1rem);
+    font-weight: 200;
 }
 
 @keyframes straightenImages {
@@ -195,4 +265,9 @@ activities-widget.children-animating .img {
         transform: translateX(0);
         z-index: 1;
     }
+}
+
+
+.footer {
+    margin-inline: -60px;
 }

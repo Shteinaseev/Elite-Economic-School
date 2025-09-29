@@ -10,8 +10,13 @@
     <link rel="stylesheet" href="Schooling.css">
     <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
 </head>
-
 <body>
+    <svg style="display: none">
+        <filter id="glass-distortion">
+            <feTurbulence type="turbulence" baseFrequency="0.008" numOctaves="2" result="noise" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="77" />
+        </filter>
+    </svg>
     <header class="header"> 
         <a href="/index.html" class="logo">Elite Economic school</a> <i class="bx bx-menu"
             id="menu-icon"></i>
@@ -19,7 +24,7 @@
             <a href="#">O školi</a> 
             <a href="/Schooling.html">Školovanje</a> 
             <a href="/contact.html">Kontakt</a> 
-            <a href="#">Foto galerija</a> 
+            <a href="/foto-gallery.html">Foto galerija</a> 
         </nav>
     </header>
     <div class="nav-bg"></div>
@@ -31,60 +36,335 @@
                 </div>
             </div>
         </div>
-        <section class="svoj-put">
+        <section class="svoj-put glass-card">
+            <div class="glass-filter"></div>
+            <div class="glass-specular"></div>
             <h1>Biraj svoj put ka uspehu – obrazovni profili za svaku ambiciju!</h1>
             <div class="float-card-cont">
                 <article class="float-card"> <img src="/icons/7b14e170.png" alt="stepen-icon">
                     <h3>III stepen</h3> 
+                    <a href="#III" class="stepen-btn">više</a>
+                </article>
+                <article class="float-card"> <img src="/icons/7b14e170.png" alt="stepen-icon">
+                    <h3>IV stepen</h3> 
+                    <a href="#IV" class="stepen-btn">više</a>
+                </article>
+                <article class="float-card"> <img src="/icons/7b14e170.png" alt="stepen-icon">
+                    <h3>v stepen</h3> 
                     <a href="#" class="stepen-btn">više</a>
-                </article>
-                <article class="float-card"> <img src="/icons/7b14e170.png" alt="stepen-icon">
-                    <h3>IV stepen</h3> <a href="#" class="stepen-btn">više</a>
-                </article>
-                <article class="float-card"> <img src="/icons/7b14e170.png" alt="stepen-icon">
-                    <h3>v stepen</h3> <a href="#" class="stepen-btn">više</a>
                 </article>
             </div>
         </section>
-        <activities-widget>
-            <div class="activity">
-                <div class="img"><img src='images/trgovac.jpg' alt=''></div>
-                <div class="text">
-                    <h3>Trgovac</h3>
-                    <p>Vanredno školovanje</p>
+        <section class="profiles">
+            <activities-widget>
+                <div class="activity" id="III">
+                    <div class="img"><img src='images/trgovac.jpg' alt=''></div>
+                    <div class="text">
+                        <h3>Trgovac</h3>
+                        <p class="type">Vanredno školovanje</p>
+                        <p>Učenici usvajaju znanja o organizaciji prodavnice,
+                            maloprodaji i veleprodaji, instrumentima za merenje i tehničkim uređajima u prodavnici. 
+                            Stručno osposobljeni učenici nakon završetka obrazovanja u ovom profilu stiču stručne kvalifikacije,
+                            kao što su između ostalih: ovladavanje tehnikom neposredne prodaje robe, načinima plaćanja,
+                            blagajničkom dokumentacijom, snabdevanje prodavnice robom, formiranjem maloprodajnih cena, poslovnom korespondencijom, 
+                            praćenja propisa u trgovini, postupcima inventarisanja i kontrole u prodavnici, tržištu.
+                        </p>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="img">
+                        <img src="images/5ca5c5c2cfa9794bd149a3cc90c09c24fb60cd86c4c9b4e3377a56e53128f098f464be533fda2bab1c0bad5d301e2b4f28649042d1292ca6db4a61_1280.jpg"
+                            alt=''>
+                    </div>
+                    <div class="text">
+                        <h3>Kuvar</h3>
+                        <p class="type">Vanredno školovanje</p>
+                        <p>
+                            Kuvar se bavi pripremom raznih vrsta toplih i hladnih jela u 
+                            ugostiteljskim objektima, obraćajući pritom pažnju da jela osim što moraju biti 
+                            jako ukusna, moraju biti i lepo dekorisana. Vrši izbor i pripremu namirnica, određuje način 
+                            pripremanja (kuvanje, pečenje, prženje, i drugo), kao i serviranje jela. 
+                            Radi uglavnom u zatvorenim prostorijama u kojima je povišena temperatura 
+                            i vazduh zasićen parom. Radi pretežno stojeći i u pokretu, uz stalno angažovanje ruku.
+                            Zavisno od veličine kuhinje i objekta u kojem radi, može biti raspoređen po zadacima. 
+                            U većim objektima imaju pomoćnike koji im pripremaju namirnica. 
+                            Takođe mora da vodi računa o higijeni prostora u kojem se priprema hrana kao i čistoći sudova.
+                        </p>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="img"><img
+                            src="images/b9afbdd0a0a8dab71509cffaffe39fab38880a925f3074e8cdda1dd6a11cf501378299537b991df47984bcf2f6b7fcce78b71e9e34269986f23072_1280.jpg"
+                            alt=''></div>
+                    <div class="text">
+                        <h3>Poslastičar</h3>
+                        <p class="type">Vanredno školovanje</p>
+                        <p>
+                            Zanimanje poslastičara je u poslednje vreme dostiglo veoma visok nivo profesionalnosti, kako u našoj zemlji,
+                            tako i u inostranstvu. Ovaj poziv predstavlja pravu umetnost i da biste uspeli u njemu potrebna 
+                            Vam je velika upornost, ogromna energija , a što je najvažnije dobra i kvalitetna edukacija. 
+                            Samim tim što je za ovaj posao potrebna celokupna usredsređenost svakog polaznika, 
+                            specifičnost je i u saznanju, kako i na koji način kvalitetno usavršiti svoje znanje. 
+                            Jer, pravljenje božanstvenih poslastica zasigurno pruža poseban osećaj, posebno ako na taj način 
+                            još možete i da pružite neko posebno zadovoljstvo i užitak drugima. Ovo su vrhunska dostignuća 
+                            svake domaće ili ugostiteljske kuhinje.
+                        </p>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="img">
+                        <img
+                            src="images/b73c13d15f3ac19ffdf04d08661319981e7639e5af7a645fab42fdd2137d7cf65848b9e89c060eaaf7c853ace24311ffd24d31d22b2cf4ad310879_1280.jpg"
+                            alt=''>
+                    </div>
+                    <div class="text">
+                        <h3>Konobar</h3>
+                        <p class="type">Vanredno školovanje</p>
+                        <p>
+                            Zanimanje konobara podrazumeva širok spektar psihofizičkih sposobnosti. 
+                            Na prvom mestu konobari moraju dobro da poznaju pravila bontona, 
+                            da se odlikuju tačnošću, kao i da su uvek prijatni sa gostima. 
+                            Sama reputacija ugostiteljskog objekta u velikoj meri zavisi od ponašanja konbara i ophođenja prema gostima, 
+                            naročito onima koji često dolaze, te se po veoma strogim uslovima i 
+                            visokim standardima biraju najbolji u ovom poslu. Kvalitetni 
+                            profesionalni konobari su uvek traženi, te relativno lako pronalaze posao,
+                            kako u našoj zemlji, tako i u inostranstvu.
+                        </p>
+                    </div>
+                </div>
+            </activities-widget>
+        </section>
+        <section class="profiles" id="IV">
+            <activities-widget>
+                <div class="activity" id="Redovno-skolovanje">
+                    <div class="img"><img src='images/itpromo-1.jpg' alt=''></div>
+                    <div class="text">
+                        <h3>Tehničar informacionih tehnologija</h3>
+                        <p class="type">Redovno školovanje</p>
+                        <p>Cilj obrazovnog profila Tehničar informacionih tehnologija je osposobljavanje učenika da projektuju i 
+                            implementiraju sve oblike aplikativnih softverskih proizvoda, počevši od desktop aplikacija, 
+                            pa sve do statičkih i dinamičkih aplikacija baziranih na veb tehnologijama. 
+                            Učenici stiču praktična znanja iz oblasti modelovanja i razvijanja baza podataka, 
+                            kao i veštine održavanja i provere sigurnosti informacionih sistema i zaštite podataka.Po završetku četvorogodišnjeg obrazovanja, učenik je potpuno pripremljen 
+                            za obavljanje ovih dužnosti na radnom mestu, ali i da nastavi dalje usavršavanje na visokim školama, u zemlji ili inostranstvu.
+                        </p>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="img">
+                        <img src="images/Tourism-worldwide.jpg"
+                            alt=''>
+                    </div>
+                    <div class="text">
+                        <h3>Turistički tehničar</h3>
+                        <p class="type">Redovno školovanje</p>
+                        <p>
+                            Bavi se organizacijom turističkih ponuda koje ugovara i pruža sve neophodne informacije o njima. 
+                            Zadatak mu je da prikupi i obezbedi svu neophodnu dokumentaciju (pasoše, vize, itd.) kao i da proveri da li je važeća. Rezerviše smeštaj i karte. Stoji na raspolaganju kako putnicima 
+                            tako i hotelima i prevoznicima i zadatak mu je da bude posrednik. Cilj mu je udobnost i kvalitet turističke usluge.
+                        </p>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="img"><img
+                            src="images/1712412994642.png"
+                            alt=''></div>
+                    <div class="text">
+                        <h3>Ekonomski tehničar</h3>
+                        <p class="type">Redovno školovanje</p>
+                        <p>
+                            Ekonomski tehničar je obrazovni profil četvrtog stepena koji osposobljava učenike da se po završetku 
+                            četvorogodišnjeg srednjoškolskog obrazovanja bave finansijama, marketingom, knjigovodstvom, 
+                            komercijalnim poslovima i drugim ekonomskim delatnostima. U opseg poslova kojim se može baviti,
+                             spadaju i knjiženje bankarskih promena, sastavljanje izveštaja o poslovanju, kao i sprovođenje n
+                             ovčanih transakcija. Posao ekonomskog tehničara se najčešće odnosi na kancelarijski posao koji podrazumeva upotrebu računara. 
+                            Neke od osobina koje su poželjne za ovaj smer su preciznost, snalažljivost, dobra organizovanost i otvorenost za komunikaciju.
+                        </p>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="img">
+                        <img
+                            src="images/what-is-culinary-arts.jpg"
+                            alt=''>
+                    </div>
+                    <div class="text">
+                        <h3>Kulinarski tehničar</h3>
+                        <p class="type">Vanredno školovanje</p>
+                        <p>
+                            Posao kulinarskog tehničara je da sprema svaku vrstu hladnih i toplih obroka. Bira, poručuje, 
+                            preuzima i sprema sastojke, odlučuje o načinu njihove pripreme i aranžiranju jela kao i o meniju, 
+                            u skladu sa željama njegovog poslodavca. Takođe mora da vodi računa o higijeni prostora u kom se priprema hrana i čistoći sudova.
+                        </p>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="img">
+                        <img
+                            src="images/legal-in-IT.jpg"
+                            alt=''>
+                    </div>
+                    <div class="text">
+                        <h3>Pravno-poslovni tehničar</h3>
+                        <p class="type">Vanredno školovanje</p>
+                        <p>
+                            Pravno-poslovni tehničar je reformisani pravni tehničar. Od školske 2019/20. godine obrazovni profil 
+                            pravni tehničar menja naziv u pravno-poslovni tehničar uz izvesne sadržinske promene. Izmena je najviše išla
+                             u pravcu povećanja broja stručnih predmeta, a posebno časova vežbi. Pored neophodnih stručnih znanja, 
+                             praktične veštine neophodne za obavljanje poslova, učenici ovog profila stiču na časovima vežbi, u okviru nastave u bloku, 
+                            kao i u okviru sekcija koje se organizuju u školi. Nastava u bloku realizuje se u raznim državnim institucijama i preduzećima.
+                        </p>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="img">
+                        <img
+                            src="images/1-3419-1568x1045-1.jpg"
+                            alt=''>
+                    </div>
+                    <div class="text">
+                        <h3>Finansijsko-računovodstveni tehničar</h3>
+                        <p class="type">Vanredno školovanje</p>
+                        <p>
+                            Finansijsko-računovodstveni tehničar je obrazovni profil četvrtog stepena u okviru kog učenici stiču znanja i
+                             veštine za vršenje poslova iz oblasti javnih i poslovnih finansija, kao i računovodstvene poslove, 
+                             prema definisanim procedurama i uz poštovanje pravne regulative.
+                            Neka od zanimanja koja finansijsko-računovodstveni tehničar može obavljati su: 
+                            finansijski referent, poreski službenik, referent za akcize, referent za takse, finansijski službenik, službenik za obračun zarada, 
+                            računovodstveni i knjigovodstveni službenik. Učenici ovog profila mogu nastaviti dalje školovanje na raznim fakultetima u vezi sa stečenim stručnim znanjem:
+                            Ekonomski fakultet, Fakultet organizacionih nauka, na fakultetima za marketing, menadžment i sl.
+                        </p>    
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="img">
+                        <img
+                            src="images/e98a08f1c1bcd5bd205f3882f6bfbc3892eefcead6de0c9b6f8e01c735059b9fe8d5f3d08db4a9b9396cdd70092f163016abf9bb8e0328e339e1df_1280.jpg"
+                            alt=''>
+                    </div>
+                    <div class="text">
+                        <h3>Trgovinski tehničar</h3>
+                        <p class="type">Vanredno školovanje</p>
+                        <p>
+                           U opis smera spadaju različiti radovi sa robom koja se kupuje i prodaje. Dužnost prodavca je da na ljubazan i 
+                           uslužan način kupcu saopšti pojedinosti o ceni, kvalitetu i uslovima kupovine određenog proizvoda. 
+                           Ukoliko se kupac odluči da kupi proizvod, prodavac vrši naplatu i stavlja kupljenu robu na spisak dnevne prodaje, naručuje i otpremljuje robu,
+                            obračunava blagajnu i uplaćuje pazar. Može da se zaposli u svim preduzećima koja se bave trgovinom.
+                        </p>    
+                    </div>
+                </div>
+            </activities-widget>
+        </section>
+        <section class="profiles">
+            <activities-widget>
+                <div class="activity">
+                    <div class="img">
+                        <img
+                            src="images/original-size.webp"
+                            alt=''>
+                    </div>
+                    <div class="text">
+                        <h3>Trgovački menadžer</h3>
+                        <p class="type">Vanredno školovanje</p> 
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="img">
+                        <img
+                            src="images/photo-top-10-best-company-secretary-service-in-singapore-700x478-1.jpg"
+                            alt=''>
+                    </div>
+                    <div class="text">
+                        <h3>Poslovni sekretar</h3>
+                        <p class="type">Vanredno školovanje</p> 
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="img">
+                        <img
+                            src="images/1671620985022.png""
+                            alt=''>
+                    </div>
+                    <div class="text">
+                        <h3>Kontrolor u bankarstvu</h3>
+                        <p class="type">Vanredno školovanje</p> 
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="img">
+                        <img
+                            src="images/tourism-travel-agency_545377-10272.jpg""
+                            alt=''>
+                    </div>
+                    <div class="text">
+                        <h3>Turistički organizator</h3>
+                        <p class="type">Vanredno školovanje</p> 
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="img">
+                        <img
+                            src="images/how_to_become_a_chef_header_image.jpg""
+                            alt=''>
+                    </div>
+                    <div class="text">
+                        <h3>Kuvar specijalista</h3>
+                        <p class="type">Vanredno školovanje</p> 
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="img">
+                        <img
+                            src="images/90-Waiter-Training-Course.jpg""
+                            alt=''>
+                    </div>
+                    <div class="text">
+                        <h3>Konobar specijalista</h3>
+                        <p class="type">Vanredno školovanje</p> 
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="img">
+                        <img
+                            src="images/Confectioner_puttingontouches.jpg""
+                            alt=''>
+                    </div>
+                    <div class="text">
+                        <h3>Poslastičar specijalista</h3>
+                        <p class="type">Vanredno školovanje</p> 
+                    </div>
+                </div>
+            </activities-widget>
+        </section>
+        <footer id="footer" class="footer glass-card">
+            <div class="glass-form"></div>
+            <div class="glass-filter"></div>
+            <div class="glass-specular"></div>
+            <div class="glass-content">
+                <div class="footer-section">
+                    <h3>Contacts</h3>
+                    <p>Tel: +381 21 6302-992</p>
+                    <p>Mob: +381 63 535-759</p>
+                    <p>Mail: <a href="mailto:skola@elitna.edu.rs" target="_blank" title="e-mail">skola@elitna.edu.rs</a>
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h3>Links</h3>
+                    <a href="#">Upis nove generacije</a>
+                    <a href="#">Obrazovni profili</a>
+                    <a href="#">Redovno obrazovanje</a>
+                    <a href="#">Vanredno obrazovanje</a>
+                    <a href="#">Dokumentacija za upis</a>
+                    <a href="#">Cene školovanja</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Škola</h3>
+                    <a href="#">O školi</a>
+                    <a href="#">Reč direktora</a>
+                    <a href="#">Saradnja sa roditeljima</a>
                 </div>
             </div>
-            <div class="activity">
-                <div class="img">
-                    <img src="images/5ca5c5c2cfa9794bd149a3cc90c09c24fb60cd86c4c9b4e3377a56e53128f098f464be533fda2bab1c0bad5d301e2b4f28649042d1292ca6db4a61_1280.jpg"
-                        alt=''>
-                </div>
-                <div class="text">
-                    <h3>Kuvar</h3>
-                    <p>Vanredno školovanje</p>
-                </div>
-            </div>
-            <div class="activity">
-                <div class="img"><img
-                        src="images/b9afbdd0a0a8dab71509cffaffe39fab38880a925f3074e8cdda1dd6a11cf501378299537b991df47984bcf2f6b7fcce78b71e9e34269986f23072_1280.jpg"
-                        alt=''></div>
-                <div class="text">
-                    <h3>Poslastičar</h3>
-                    <p>Vanredno školovanje</p>
-                </div>
-            </div>
-            <div class="activity">
-                <div class="img">
-                    <img
-                        src="images/b73c13d15f3ac19ffdf04d08661319981e7639e5af7a645fab42fdd2137d7cf65848b9e89c060eaaf7c853ace24311ffd24d31d22b2cf4ad310879_1280.jpg"
-                        alt=''>
-                </div>
-                <div class="text">
-                    <h3>Konobar</h3>
-                    <p>Vanredno školovanje</p>
-                </div>
-            </div>
-        </activities-widget>
+        </footer>
     </main>
     <script type="module" src="widget.js"></script>
 </body>
