@@ -14,27 +14,20 @@ main {
     padding-block: 50px;
     display: flex;
     justify-content: center;
-    column-gap: 2.5rem;
+    gap: 2.5rem;
     border-radius: 25px;
     padding-inline: 60px;
-}
-
-@media (max-width: 650px) {
-    .map-cont {
-        padding-inline: 20px;
-    }
-
 }
 
 .map {
     z-index: 4;
     position: relative;
-    flex-basis: 60%;
+    flex-basis: 40%;
 }
 
 .map iframe {
     width: 100%;
-    height: 40vh;
+    height: 45vh;
     border-radius: 25px;
     box-shadow: 0 8px 30px rgba(187, 155, 255, 0.3), 0 4px 12px rgba(233, 223, 255, 0.4);
 }
@@ -132,7 +125,7 @@ main {
 
 form {
     position: relative;
-    width: 35vw;
+    width: min(80%, 450px);
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -276,6 +269,30 @@ fieldset input {
     transform: translateX(100%);
 }
 
-.footer {
-    margin-inline: -60px;
+@media (max-width: 650px) {
+    .map-cont {
+        padding-inline: 20px;
+        flex-wrap: wrap;
+    }
+
+    .desc-block {
+        flex-basis: 100%;
+    }
+
+    .map {
+        flex-basis: 100%;
+        padding-inline: 30px;
+    }
+
+    .map iframe {
+        height: 30vh;
+    }
+
+}
+
+@media (max-width: 600px) {
+    main {
+        padding-inline: 20px;
+    }
+
 }

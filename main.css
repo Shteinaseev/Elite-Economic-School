@@ -89,6 +89,7 @@ main {
     font-size: clamp(1.2rem, 1.701vw, 1.56rem);
     font-weight: 600;
     cursor: default;
+    white-space: nowrap;
 }
 
 .glass-filter,
@@ -256,6 +257,11 @@ h1 {
 }
 
 @media (max-width: 768px) {
+
+    .header {
+        padding-inline: 1rem;
+    }
+
     #menu-icon {
         display: block;
     }
