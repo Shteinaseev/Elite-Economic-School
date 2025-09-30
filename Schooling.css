@@ -3,25 +3,13 @@ main {
 }
 
 .svoj-put {
-    margin-top: 110px;
+    margin-top: 210px;
     position: relative;
     padding: 50px;
     border-radius: 25px;
     margin-inline: 40px;
 }
 
-@media (max-width: 850px) {
-    .svoj-put {
-        margin-inline: 0;
-        padding: 30px;
-    }
-}
-
-@media (max-width: 800px) {
-    main {
-        padding-inline: 20px;
-    }
-}
 
 
 .svoj-put h1 {
@@ -264,7 +252,6 @@ activities-widget.children-animating .img {
 }
 
 
-
 @keyframes straightenImages {
     50% {
         --imgRotate: 0deg;
@@ -282,9 +269,25 @@ activities-widget.children-animating .img {
     }
 }
 
+@media (max-width: 850px) {
+    .svoj-put {
+        margin-inline: 0;
+        padding: 30px;
+    }
+
+
+}
+
+@media (max-width: 800px) {
+    main {
+        padding-inline: 20px;
+    }
+}
+
 
 @media (max-width: 550px) {
     activities-widget {
+        margin-block: 80px;
         grid-template-columns: 1fr;
         grid-template-rows: auto auto auto auto;
     }
@@ -311,9 +314,9 @@ activities-widget.children-animating .img {
         grid-column: 1;
         grid-row: 3;
     }
+
+    .float-card {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
 }
-
-
-/* .footer {
-    margin-inline: -60px;
-} */

@@ -289,7 +289,7 @@ h1 {
         top: 8vh;
         left: 0;
         width: 100%;
-        min-height: 270px;
+        min-height: 300px;
         background-image: linear-gradient(60deg, #00000022, #00000033);
         backdrop-filter: blur(30px);
         border-bottom: 2px solid #ffffff22;
