@@ -178,7 +178,7 @@ main {
 
 @media (orientation: landscape) {
     .image-container {
-        overflow: hidden;
+        overflow: var(--overflow);
         width: var(--img-max-width);
         aspect-ratio: var(--img-ratio);
         transition: .4s;
@@ -196,13 +196,8 @@ main {
 
     }
 
-    .slide .item:nth-child(5) {
+    .slide .item:nth-child(n + 5) {
         left: calc(70% + 440px);
-        top: 75%;
-    }
-
-    .slide .item:nth-child(n + 6) {
-        left: calc(70% + 660px);
         top: 75%;
         opacity: 0;
     }

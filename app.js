@@ -18,10 +18,12 @@ function updateRatio() {
     if (ratio > 1){
         document.documentElement.style.setProperty('--img-max-width', 'min(100vw, 1200px)');
         document.documentElement.style.setProperty('--img-ratio', '1.7');
+        document.documentElement.style.setProperty('--overflow', 'hidden');
 
     } else{
         document.documentElement.style.setProperty('--img-max-width', 'clamp(450px, 35vw, 800px');
-        document.documentElement.style.setProperty('--img-ratio', '0.7');
+        document.documentElement.style.setProperty('--img-ratio', '0.8');
+        document.documentElement.style.setProperty('--overflow', 'visible');
 
     }
   };
