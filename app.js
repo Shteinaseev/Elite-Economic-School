@@ -15,15 +15,15 @@ function updateRatio() {
 
   img.onload = () => {
     const ratio = img.naturalWidth / img.naturalHeight;
-    if (ratio > 1){
-        document.documentElement.style.setProperty('--img-max-width', 'min(100vw, 1200px)');
-        document.documentElement.style.setProperty('--img-ratio', '1.7');
-        document.documentElement.style.setProperty('--overflow', 'hidden');
+    if (ratio > 1) {
+      document.documentElement.style.setProperty('--img-max-width', 'min(100vw, 1100px)');
+      document.documentElement.style.setProperty('--img-ratio', ratio);
+      document.documentElement.style.setProperty('--overflow', 'hidden');
 
-    } else{
-        document.documentElement.style.setProperty('--img-max-width', 'clamp(450px, 35vw, 800px');
-        document.documentElement.style.setProperty('--img-ratio', '0.8');
-        document.documentElement.style.setProperty('--overflow', 'visible');
+    } else {
+      document.documentElement.style.setProperty('--img-max-width', 'clamp(450px, 35vw, 700px');
+      document.documentElement.style.setProperty('--img-ratio', ratio);
+      document.documentElement.style.setProperty('--overflow', 'visible');
 
     }
   };
